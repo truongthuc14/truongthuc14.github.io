@@ -1,73 +1,351 @@
 <!DOCTYPE html>
-<html lang="vi" class="dark">
+<html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
-
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
-
-  <!-- GSAP -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DEV.PORTFOLIO — Nguyễn Dev</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;700;800&display=swap" rel="stylesheet" />
 </head>
+<body>
 
-<body class="text-white">
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
 
-<!-- Cursor -->
-<div class="cursor" id="cursor"></div>
+  <!-- NOISE OVERLAY -->
+  <div class="noise"></div>
 
-<!-- NAV -->
-<nav class="flex justify-between p-6 max-w-6xl mx-auto">
-  <h1 class="font-bold text-xl">Leinad.</h1>
-  <button onclick="toggleDark()" class="bg-green-400 text-black px-4 py-2 rounded">
-    Toggle
-  </button>
-</nav>
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-logo">
+      <span class="logo-bracket">[</span>
+      <span class="logo-text">ND</span>
+      <span class="logo-bracket">]</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about" data-text="về tôi">về tôi</a></li>
+      <li><a href="#skills" data-text="kỹ năng">kỹ năng</a></li>
+      <li><a href="#projects" data-text="dự án">dự án</a></li>
+      <li><a href="#contact" data-text="liên hệ">liên hệ</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 
-<!-- HERO -->
-<section class="text-center py-24">
-  <h1 class="text-4xl font-bold">
-    Hi, I am <span class="text-green-400">Daniel</span>
-  </h1>
-  <p class="opacity-70 mt-4">Frontend Developer với UI hiện đại</p>
-</section>
-
-<!-- SERVICES -->
-<section class="max-w-6xl mx-auto px-6 reveal">
-  <h2 class="text-2xl mb-6">Services</h2>
-  <div class="grid md:grid-cols-3 gap-6">
-    <div class="card p-6 border rounded-xl">Web Dev</div>
-    <div class="card p-6 border rounded-xl">UI Design</div>
-    <div class="card p-6 border rounded-xl">Content</div>
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" class="mobile-link">về tôi</a></li>
+      <li><a href="#skills" class="mobile-link">kỹ năng</a></li>
+      <li><a href="#projects" class="mobile-link">dự án</a></li>
+      <li><a href="#contact" class="mobile-link">liên hệ</a></li>
+    </ul>
   </div>
-</section>
 
-<!-- ABOUT -->
-<section class="flex flex-col items-center py-20 reveal">
-  <img src="https://i.pravatar.cc/200" class="rounded-full border-4 border-green-400 mb-6">
-  <p class="max-w-md text-center opacity-70">
-    Tôi làm UI đẹp và mượt
-  </p>
-</section>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <canvas id="gridCanvas"></canvas>
+    </div>
 
-<!-- CONTACT -->
-<section class="max-w-4xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-6 reveal">
-  <div>
-    <h2 class="text-xl">Contact</h2>
-    <p>Email: test@gmail.com</p>
-  </div>
-  <div>
-    <input class="w-full p-2 mb-3 bg-transparent border" placeholder="Name">
-    <input class="w-full p-2 mb-3 bg-transparent border" placeholder="Email">
-    <textarea class="w-full p-2 mb-3 bg-transparent border" placeholder="Message"></textarea>
-    <button class="bg-green-400 text-black px-4 py-2 rounded">Send</button>
-  </div>
-</section>
+    <div class="hero-content">
+      <div class="hero-tag">
+        <span class="blink">▮</span>
+        <span>available for work</span>
+      </div>
+      <h1 class="hero-title">
+        <span class="line" data-delay="0">Nguyễn</span>
+        <span class="line accent" data-delay="150">Dev.</span>
+      </h1>
+      <p class="hero-sub">
+        <span class="type-text" id="typeText"></span><span class="type-cursor">_</span>
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">xem dự án <span class="arrow">→</span></a>
+        <a href="#contact" class="btn btn-ghost">liên hệ</a>
+      </div>
+    </div>
 
-<script src="app.js"></script>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num" data-target="3">0</span>
+        <span class="stat-label">năm kinh nghiệm</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num" data-target="24">0</span>
+        <span class="stat-label">dự án hoàn thành</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num" data-target="12">0</span>
+        <span class="stat-label">khách hàng hài lòng</span>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section-label">// 01 — về tôi</div>
+      <div class="about-grid">
+        <div class="about-visual">
+          <div class="avatar-wrap">
+            <div class="avatar-frame">
+              <div class="avatar-inner">
+                <div class="avatar-initials">ND</div>
+                <div class="avatar-ring ring-1"></div>
+                <div class="avatar-ring ring-2"></div>
+              </div>
+            </div>
+            <div class="avatar-tag">
+              <span class="dot green"></span> Open to work
+            </div>
+          </div>
+          <div class="code-snippet">
+            <div class="code-header">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+              <span class="code-filename">about.json</span>
+            </div>
+            <pre class="code-body"><code>{
+  <span class="key">"name"</span>: <span class="str">"Nguyễn Dev"</span>,
+  <span class="key">"role"</span>: <span class="str">"Fullstack Developer"</span>,
+  <span class="key">"location"</span>: <span class="str">"Hà Nội, Việt Nam"</span>,
+  <span class="key">"passion"</span>: <span class="str">"Building cool stuff"</span>,
+  <span class="key">"coffee"</span>: <span class="num">∞</span>
+}</code></pre>
+          </div>
+        </div>
+        <div class="about-text">
+          <h2 class="section-title">Tôi là một developer<br /><em>đam mê sáng tạo</em></h2>
+          <p>Với hơn <strong>3 năm kinh nghiệm</strong> trong lĩnh vực phát triển web, tôi chuyên xây dựng các sản phẩm số hiệu suất cao, đẹp mắt và dễ sử dụng từ giao diện đến server.</p>
+          <p>Tôi tin rằng code tốt không chỉ cần chạy đúng — nó cần được viết rõ ràng, dễ bảo trì và có thể mở rộng. Mỗi dòng code là một quyết định thiết kế.</p>
+          <div class="about-tags">
+            <span class="tag">React</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Docker</span>
+          </div>
+          <a href="#" class="btn btn-primary" download>tải CV <span class="arrow">↓</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="skills section" id="skills">
+    <div class="container">
+      <div class="section-label">// 02 — kỹ năng</div>
+      <h2 class="section-title center">Công nghệ tôi sử dụng</h2>
+
+      <div class="skills-grid">
+        <div class="skill-card" data-skill="Frontend">
+          <div class="skill-icon">⬡</div>
+          <h3>Frontend</h3>
+          <ul>
+            <li><span>React / Next.js</span><div class="bar"><div class="bar-fill" data-w="92"></div></div></li>
+            <li><span>TypeScript</span><div class="bar"><div class="bar-fill" data-w="88"></div></div></li>
+            <li><span>CSS / Tailwind</span><div class="bar"><div class="bar-fill" data-w="95"></div></div></li>
+            <li><span>Vue.js</span><div class="bar"><div class="bar-fill" data-w="75"></div></div></li>
+          </ul>
+        </div>
+        <div class="skill-card" data-skill="Backend">
+          <div class="skill-icon">◈</div>
+          <h3>Backend</h3>
+          <ul>
+            <li><span>Node.js / Express</span><div class="bar"><div class="bar-fill" data-w="90"></div></div></li>
+            <li><span>Python / FastAPI</span><div class="bar"><div class="bar-fill" data-w="80"></div></div></li>
+            <li><span>PostgreSQL</span><div class="bar"><div class="bar-fill" data-w="85"></div></div></li>
+            <li><span>Redis</span><div class="bar"><div class="bar-fill" data-w="70"></div></div></li>
+          </ul>
+        </div>
+        <div class="skill-card" data-skill="DevOps">
+          <div class="skill-icon">◇</div>
+          <h3>DevOps & Tools</h3>
+          <ul>
+            <li><span>Docker / K8s</span><div class="bar"><div class="bar-fill" data-w="78"></div></div></li>
+            <li><span>Git / GitHub</span><div class="bar"><div class="bar-fill" data-w="95"></div></div></li>
+            <li><span>AWS / GCP</span><div class="bar"><div class="bar-fill" data-w="72"></div></div></li>
+            <li><span>CI/CD</span><div class="bar"><div class="bar-fill" data-w="80"></div></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects section" id="projects">
+    <div class="container">
+      <div class="section-label">// 03 — dự án</div>
+      <h2 class="section-title center">Công trình nổi bật</h2>
+      <div class="projects-grid">
+
+        <article class="project-card featured">
+          <div class="project-img">
+            <div class="project-placeholder p1">
+              <span>01</span>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="project-link">xem dự án ↗</a>
+              <a href="#" class="project-link ghost">github ↗</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta">
+              <span class="project-year">2024</span>
+              <span class="project-type">Fullstack</span>
+            </div>
+            <h3>E-Commerce Platform</h3>
+            <p>Nền tảng thương mại điện tử hiện đại với hệ thống quản lý kho, thanh toán thời gian thực và dashboard phân tích.</p>
+            <div class="project-stack">
+              <span>Next.js</span><span>Node.js</span><span>PostgreSQL</span><span>Stripe</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-img">
+            <div class="project-placeholder p2"><span>02</span></div>
+            <div class="project-overlay">
+              <a href="#" class="project-link">xem dự án ↗</a>
+              <a href="#" class="project-link ghost">github ↗</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta">
+              <span class="project-year">2024</span>
+              <span class="project-type">SaaS</span>
+            </div>
+            <h3>Task Manager App</h3>
+            <p>Ứng dụng quản lý công việc cộng tác với real-time sync và AI tự động phân loại.</p>
+            <div class="project-stack">
+              <span>React</span><span>Socket.io</span><span>Redis</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-img">
+            <div class="project-placeholder p3"><span>03</span></div>
+            <div class="project-overlay">
+              <a href="#" class="project-link">xem dự án ↗</a>
+              <a href="#" class="project-link ghost">github ↗</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta">
+              <span class="project-year">2023</span>
+              <span class="project-type">API</span>
+            </div>
+            <h3>Developer API Hub</h3>
+            <p>Cổng API tập trung với rate limiting, analytics và tài liệu tương tác tự động.</p>
+            <div class="project-stack">
+              <span>FastAPI</span><span>Docker</span><span>AWS</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-img">
+            <div class="project-placeholder p4"><span>04</span></div>
+            <div class="project-overlay">
+              <a href="#" class="project-link">xem dự án ↗</a>
+              <a href="#" class="project-link ghost">github ↗</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta">
+              <span class="project-year">2023</span>
+              <span class="project-type">Mobile</span>
+            </div>
+            <h3>Finance Tracker</h3>
+            <p>App theo dõi tài chính cá nhân với biểu đồ trực quan và thông báo thông minh.</p>
+            <div class="project-stack">
+              <span>React Native</span><span>Expo</span><span>Firebase</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="section-label">// 04 — liên hệ</div>
+      <div class="contact-wrap">
+        <div class="contact-left">
+          <h2 class="section-title">Hãy cùng<br /><em>xây dựng</em> điều gì đó.</h2>
+          <p>Tôi luôn mở cửa với các dự án thú vị và cơ hội hợp tác mới. Đừng ngần ngại liên lạc!</p>
+          <div class="contact-links">
+            <a href="mailto:dev@example.com" class="contact-item">
+              <span class="contact-icon">✉</span>
+              <span>dev@example.com</span>
+            </a>
+            <a href="#" class="contact-item">
+              <span class="contact-icon">⌥</span>
+              <span>github.com/nguyendev</span>
+            </a>
+            <a href="#" class="contact-item">
+              <span class="contact-icon">◎</span>
+              <span>linkedin.com/in/nguyendev</span>
+            </a>
+          </div>
+        </div>
+        <div class="contact-right">
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="name">Tên của bạn</label>
+              <input type="text" id="name" placeholder="Nguyễn Văn A" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="hello@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Tin nhắn</label>
+              <textarea id="message" rows="5" placeholder="Xin chào! Tôi muốn trao đổi về..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary full">
+              gửi tin nhắn <span class="arrow">→</span>
+            </button>
+            <div class="form-success" id="formSuccess">
+              ✓ Tin nhắn đã được gửi thành công!
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <span class="logo-bracket">[</span>ND<span class="logo-bracket">]</span>
+        </div>
+        <p class="footer-copy">© 2024 Nguyễn Dev. Crafted with <span class="heart">♥</span> & lots of coffee.</p>
+        <div class="footer-socials">
+          <a href="#">GH</a>
+          <a href="#">LI</a>
+          <a href="#">TW</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
 </body>
 </html>
