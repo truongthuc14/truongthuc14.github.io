@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DEV.PORTFOLIO — Nguyễn Dev</title>
+  <title>DEV.PORTFOLIO — TruongThuc</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;700;800&display=swap" rel="stylesheet" />
 </head>
@@ -20,14 +20,14 @@
   <nav class="nav" id="nav">
     <div class="nav-logo">
       <span class="logo-bracket">[</span>
-      <span class="logo-text">ND</span>
+      <span class="logo-text">TMT</span>
       <span class="logo-bracket">]</span>
     </div>
     <ul class="nav-links">
-      <li><a href="#about" data-text="về tôi">về tôi</a></li>
-      <li><a href="#skills" data-text="kỹ năng">kỹ năng</a></li>
-      <li><a href="#projects" data-text="dự án">dự án</a></li>
-      <li><a href="#contact" data-text="liên hệ">liên hệ</a></li>
+      <li><a href="#about" data-text="about me">About me</a></li>
+      <li><a href="#skills" data-text="kỹ năng">Skills</a></li>
+      <li><a href="#projects" data-text="dự án">Projects</a></li>
+      <li><a href="#contact" data-text="liên hệ">Contact</a></li>
     </ul>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>
@@ -37,10 +37,10 @@
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu">
     <ul>
-      <li><a href="#about" class="mobile-link">về tôi</a></li>
-      <li><a href="#skills" class="mobile-link">kỹ năng</a></li>
-      <li><a href="#projects" class="mobile-link">dự án</a></li>
-      <li><a href="#contact" class="mobile-link">liên hệ</a></li>
+      <li><a href="#about" class="mobile-link">About me</a></li>
+      <li><a href="#skills" class="mobile-link">Skills</a></li>
+      <li><a href="#projects" class="mobile-link">Projects</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
     </ul>
   </div>
 
@@ -64,7 +64,7 @@
       </p>
       <div class="hero-cta">
         <a href="#projects" class="btn btn-primary">Xem dự án <span class="arrow">→</span></a>
-        <a href="#contact" class="btn btn-ghost">liên hệ</a>
+        <a href="#contact" class="btn btn-ghost">Contact</a>
       </div>
     </div>
 
@@ -94,13 +94,13 @@
   <!-- ABOUT -->
   <section class="about section" id="about">
     <div class="container">
-      <div class="section-label">// 01 — về tôi</div>
+      <div class="section-label">--ABOUT ME--</div>
       <div class="about-grid">
         <div class="about-visual">
           <div class="avatar-wrap">
             <div class="avatar-frame">
               <div class="avatar-inner">
-                <div class="avatar-initials">ND</div>
+                <div class="avatar-initials">TMT</div>
                 <div class="avatar-ring ring-1"></div>
                 <div class="avatar-ring ring-2"></div>
               </div>
@@ -118,7 +118,7 @@
             </div>
             <pre class="code-body"><code>{
   <span class="key">"name"</span>: <span class="str">"Truong Thuc"</span>,
-  <span class="key">"role"</span>: <span class="str">"Fullstack Developer"</span>,
+  <span class="key">"role"</span>: <span class="str">"AI Engineer"</span>,
   <span class="key">"location"</span>: <span class="str">"HCM, Việt Nam"</span>,
   <span class="key">"passion"</span>: <span class="str">"Building cool stuff"</span>,
   <span class="key">"coffee"</span>: <span class="num">∞</span>
@@ -126,17 +126,17 @@
           </div>
         </div>
         <div class="about-text">
-          <h2 class="section-title">Tôi là một developer<br /><em>đam mê sáng tạo</em></h2>
-          <p>Với hơn <strong>3 năm kinh nghiệm</strong> trong lĩnh vực phát triển web, tôi chuyên xây dựng các sản phẩm số hiệu suất cao, đẹp mắt và dễ sử dụng từ giao diện đến server.</p>
+          <h2 class="section-title">Tôi là một AI Engineer<br /><em>đam mê sáng tạo</em></h2>
+          <p>Với hơn <strong>3 năm kinh nghiệm</strong> trong lĩnh vực phát triển AI, tôi chuyên xây dựng các hệ thống AI trong nhiều bài toán thực tế.</p>
           <p>Tôi tin rằng code tốt không chỉ cần chạy đúng — nó cần được viết rõ ràng, dễ bảo trì và có thể mở rộng. Mỗi dòng code là một quyết định thiết kế.</p>
           <div class="about-tags">
-            <span class="tag">React</span>
-            <span class="tag">Node.js</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">PostgreSQL</span>
+            <span class="tag">Python</span>
+            <span class="tag">Tensorflow</span>
+            <span class="tag">Git</span>
+            <span class="tag">FastAPI</span>
             <span class="tag">Docker</span>
           </div>
-          <a href="#" class="btn btn-primary" download>tải CV <span class="arrow">↓</span></a>
+          <a href="https://drive.google.com/file/d/1yLt1ic-ndBKXOh-ACOR9VY8k19QlPT5I/view?usp=sharing" class="btn btn-primary" download>Download CV <span class="arrow">↓</span></a>
         </div>
       </div>
     </div>
@@ -145,7 +145,7 @@
   <!-- SKILLS -->
   <section class="skills section" id="skills">
     <div class="container">
-      <div class="section-label">// 02 — kỹ năng</div>
+      <div class="section-label">/--SKILLS--</div>
       <h2 class="section-title center">Công nghệ tôi sử dụng</h2>
 
       <div class="skills-grid">
@@ -153,10 +153,10 @@
           <div class="skill-icon">⬡</div>
           <h3>Frontend</h3>
           <ul>
-            <li><span>React / Next.js</span><div class="bar"><div class="bar-fill" data-w="92"></div></div></li>
-            <li><span>TypeScript</span><div class="bar"><div class="bar-fill" data-w="88"></div></div></li>
-            <li><span>CSS / Tailwind</span><div class="bar"><div class="bar-fill" data-w="95"></div></div></li>
-            <li><span>Vue.js</span><div class="bar"><div class="bar-fill" data-w="75"></div></div></li>
+            <li><span>HTML</span><div class="bar"><div class="bar-fill" data-w="92"></div></div></li>
+            <li><span>CSS</span><div class="bar"><div class="bar-fill" data-w="88"></div></div></li>
+            <li><span>JavaScript</span><div class="bar"><div class="bar-fill" data-w="95"></div></div></li>
+            <li><span>NodeJS</span><div class="bar"><div class="bar-fill" data-w="75"></div></div></li>
           </ul>
         </div>
         <div class="skill-card" data-skill="Backend">
@@ -186,7 +186,7 @@
   <!-- PROJECTS -->
   <section class="projects section" id="projects">
     <div class="container">
-      <div class="section-label">// 03 — dự án</div>
+      <div class="section-label">--PROJECTS--</div>
       <h2 class="section-title center">Công trình nổi bật</h2>
       <div class="projects-grid">
 
@@ -283,7 +283,7 @@
   <!-- CONTACT -->
   <section class="contact section" id="contact">
     <div class="container">
-      <div class="section-label">// 04 — liên hệ</div>
+      <div class="section-label">--CONTACT--</div>
       <div class="contact-wrap">
         <div class="contact-left">
           <h2 class="section-title">Hãy cùng<br /><em>xây dựng</em> điều gì đó.</h2>
@@ -291,15 +291,15 @@
           <div class="contact-links">
             <a href="mailto:dev@example.com" class="contact-item">
               <span class="contact-icon">✉</span>
-              <span>dev@example.com</span>
+              <span>davidthuc14@gmail.com</span>
             </a>
             <a href="#" class="contact-item">
               <span class="contact-icon">⌥</span>
-              <span>github.com/nguyendev</span>
+              <span>github.com/truongthuc14</span>
             </a>
             <a href="#" class="contact-item">
               <span class="contact-icon">◎</span>
-              <span>linkedin.com/in/nguyendev</span>
+              <span>linkedin.com/in/davidthuc14</span>
             </a>
           </div>
         </div>
@@ -311,7 +311,7 @@
             </div>
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="email" id="email" placeholder="hello@example.com" required />
+              <input type="email" id="email" placeholder="nguyenvana@gmail.com" required />
             </div>
             <div class="form-group">
               <label for="message">Tin nhắn</label>
@@ -334,9 +334,9 @@
     <div class="container">
       <div class="footer-inner">
         <div class="footer-logo">
-          <span class="logo-bracket">[</span>ND<span class="logo-bracket">]</span>
+          <span class="logo-bracket">[</span>TMT<span class="logo-bracket">]</span>
         </div>
-        <p class="footer-copy">© 2024 Nguyễn Dev. Crafted with <span class="heart">♥</span> & lots of coffee.</p>
+        <p class="footer-copy">© 2026 DavidThuc. Crafted with <span class="heart">♥</span> & lots of coffee.</p>
         <div class="footer-socials">
           <a href="#">GH</a>
           <a href="#">LI</a>
