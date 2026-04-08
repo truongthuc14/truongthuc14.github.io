@@ -1,29 +1,58 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: Arial;
   background: #0f172a;
   color: white;
+  scroll-behavior: smooth;
 }
 
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+  background: #020617;
+  position: sticky;
+  top: 0;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Hero */
 header {
   text-align: center;
-  padding: 60px;
+  padding: 100px 20px;
   background: linear-gradient(135deg, #3b82f6, #9333ea);
 }
 
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: white;
+  color: black;
+  border-radius: 5px;
+}
+
+/* Section */
 section {
-  padding: 40px;
-  max-width: 900px;
+  padding: 60px 20px;
+  max-width: 1000px;
   margin: auto;
 }
 
-h2 {
-  border-left: 4px solid #3b82f6;
-  padding-left: 10px;
-}
-
 .projects {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
 
@@ -35,12 +64,33 @@ h2 {
 }
 
 .card:hover {
+  transform: translateY(-10px);
   background: #334155;
-  transform: translateY(-5px);
 }
 
+/* Animation */
+.fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 1s;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Footer */
 footer {
   text-align: center;
   padding: 20px;
   background: #020617;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    text-align: center;
+  }
 }
