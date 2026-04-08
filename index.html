@@ -5,33 +5,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio - Truong Thuc</title>
 
-  <!-- Link CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+  <!-- Navbar -->
+  <nav>
+    <h2>Thuc.dev</h2>
+    <ul>
+      <li><a href="#about">Giới thiệu</a></li>
+      <li><a href="#projects">Dự án</a></li>
+      <li><a href="#contact">Liên hệ</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
   <header>
-    <h1>Truong Thuc</h1>
-    <p>Web Developer | Portfolio</p>
+    <h1>Xin chào 👋</h1>
+    <h2>Mình là Truong Thuc</h2>
+    <p>Frontend Developer | HTML CSS JS</p>
+    <a href="#projects" class="btn">Xem dự án</a>
   </header>
 
-  <section>
+  <!-- About -->
+  <section id="about" class="fade">
     <h2>👤 Giới thiệu</h2>
-    <p>Tôi là lập trình viên web...</p>
+    <p>
+      Tôi là lập trình viên web, yêu thích tạo giao diện đẹp và trải nghiệm người dùng tốt.
+    </p>
   </section>
 
-  <section>
+  <!-- Projects -->
+  <section id="projects" class="fade">
     <h2>💼 Dự án</h2>
+
     <div class="projects">
-      <div class="card">Project 1</div>
-      <div class="card">Project 2</div>
+      <div class="card">
+        <h3>Website bán hàng</h3>
+        <p>HTML, CSS, JS</p>
+      </div>
+
+      <div class="card">
+        <h3>Landing Page</h3>
+        <p>Responsive design</p>
+      </div>
     </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="fade">
+    <h2>📞 Liên hệ</h2>
+    <p>Email: your@email.com</p>
+    <p>GitHub: github.com/yourname</p>
   </section>
 
   <footer>
     <p>© 2026 Truong Thuc</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
