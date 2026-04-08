@@ -3,7 +3,6 @@ body {
   font-family: Arial;
   background: #0f172a;
   color: white;
-  scroll-behavior: smooth;
 }
 
 /* Navbar */
@@ -12,14 +11,12 @@ nav {
   justify-content: space-between;
   padding: 20px 50px;
   background: #020617;
-  position: sticky;
-  top: 0;
 }
 
 nav ul {
   display: flex;
-  list-style: none;
   gap: 20px;
+  list-style: none;
 }
 
 nav a {
@@ -40,7 +37,6 @@ header {
   padding: 10px 20px;
   background: white;
   color: black;
-  border-radius: 5px;
 }
 
 /* Section */
@@ -50,6 +46,16 @@ section {
   margin: auto;
 }
 
+/* Skills */
+.skills span {
+  display: inline-block;
+  background: #1e293b;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+/* Projects */
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -60,24 +66,6 @@ section {
   background: #1e293b;
   padding: 20px;
   border-radius: 10px;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  background: #334155;
-}
-
-/* Animation */
-.fade {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: 1s;
-}
-
-.fade.show {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 /* Footer */
@@ -85,12 +73,4 @@ footer {
   text-align: center;
   padding: 20px;
   background: #020617;
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-  nav {
-    flex-direction: column;
-    text-align: center;
-  }
 }
