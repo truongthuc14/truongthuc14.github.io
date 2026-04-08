@@ -1,214 +1,73 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" class="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex Nguyen - AI Developer | Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
-<body>
 
-    <header>
-        <div class="container">
-            <div class="logo">
-                <span class="first-name">Alex</span> <span class="last-name">Nguyen</span>
-                <span class="title">| AI Developer</span>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#about">Giới thiệu</a></li>
-                    <li><a href="#skills">Kỹ năng</a></li>
-                    <li><a href="#projects">Dự án</a></li>
-                    <li><a href="#experience">Kinh nghiệm</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#contact">Liên hệ</a></li>
-                </ul>
-            </nav>
-            <a href="#" class="btn btn-cv">Tải CV</a>
-        </div>
-    </header>
+<body class="text-white">
 
-    <main>
-        <section id="hero">
-            <div class="container">
-                <div class="hero-text">
-                    <h1>Alex Nguyen | <span class="highlight">AI Developer & Engineer</span></h1>
-                    <p>Biến dữ liệu thành các giải pháp thông minh thông qua Trí tuệ Nhân tạo và Machine Learning.</p>
-                    <div class="buttons">
-                        <a href="#projects" class="btn btn-primary">Xem Dự án</a>
-                        <a href="#contact" class="btn btn-secondary">Liên hệ ngay</a>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <img src="https://via.placeholder.com/500x350" alt="Đồ họa AI">
-                </div>
-            </div>
-        </section>
+<!-- Cursor -->
+<div class="cursor" id="cursor"></div>
 
-        <section id="about">
-            <div class="container">
-                <div class="about-image">
-                    <img src="https://via.placeholder.com/250" alt="Alex Nguyen">
-                </div>
-                <div class="about-text">
-                    <h2># Về tôi</h2>
-                    <h3><span class="highlight">Alex Nguyen</span> là nhà lập trình chuyên sâu về AI, chế tác nên các giải pháp AI, mô hình ML, thông qua toán lý học cơ bản và thuật toán hiện đại. Từng giải quyết bài toán lớn, đưa giải pháp AI vào thực tiễn... <a href="#" class="read-more">read more</a></h3>
-                </div>
-            </div>
-        </section>
+<!-- NAV -->
+<nav class="flex justify-between p-6 max-w-6xl mx-auto">
+  <h1 class="font-bold text-xl">Leinad.</h1>
+  <button onclick="toggleDark()" class="bg-green-400 text-black px-4 py-2 rounded">
+    Toggle
+  </button>
+</nav>
 
-        <section id="skills">
-            <div class="container">
-                <h2># Kỹ năng</h2>
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <i class="fab fa-python"></i>
-                        <h3>Python</h3>
-                        <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
-                        <span>Senior</span>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fab fa-r-project"></i>
-                        <h3>R</h3>
-                        <div class="progress-bar"><div class="progress" style="width: 70%;"></div></div>
-                        <span>Mid-Level</span>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-database"></i>
-                        <h3>SQL</h3>
-                        <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
-                        <span>Senior</span>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-brain"></i>
-                        <h3>AI Framework</h3>
-                        <p>TensorFlow, PyTorch, Keras, Scikit-learn</p>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-eye"></i>
-                        <h3>Computer Vision</h3>
-                        <p>Object Detection, Segmentation</p>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-language"></i>
-                        <h3>NLP</h3>
-                        <p>Text Classification, Generation</p>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-microchip"></i>
-                        <h3>Machine Learning</h3>
-                        <p>Regression, Clustering, Time Series</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- HERO -->
+<section class="text-center py-24">
+  <h1 class="text-4xl font-bold">
+    Hi, I am <span class="text-green-400">Daniel</span>
+  </h1>
+  <p class="opacity-70 mt-4">Frontend Developer với UI hiện đại</p>
+</section>
 
-        <section id="projects">
-            <div class="container">
-                <h2># Dự án tiêu biểu</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <img src="https://via.placeholder.com/350x200" alt="Dự án 1">
-                        <h3>Hệ thống Phân loại Phản hồi Khách hàng</h3>
-                        <p class="tech-stack">Computer Vision, NLP</p>
-                        <p class="framework">PyTorch</p>
-                        <div class="project-links">
-                            <a href="#"><i class="fas fa-file-alt"></i> Source code</a>
-                            <a href="#"><i class="fas fa-play"></i> Demo</a>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <img src="https://via.placeholder.com/350x200" alt="Dự án 2">
-                        <h3>Dự án Giá trị Khách hàng</h3>
-                        <p class="tech-stack">Data Science</p>
-                        <p class="framework">TensorFlow, Keras</p>
-                        <div class="project-links">
-                            <a href="#"><i class="fas fa-file-alt"></i> Source code</a>
-                            <a href="#"><i class="fas fa-play"></i> Demo</a>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <img src="https://via.placeholder.com/350x200" alt="Dự án 3">
-                        <h3>Hệ thống Phát hiện Gian lận</h3>
-                        <p class="tech-stack">Machine Learning, Big Data</p>
-                        <p class="framework">Scikit-learn, AWS</p>
-                        <div class="project-links">
-                            <a href="#"><i class="fas fa-file-alt"></i> Source code</a>
-                            <a href="#"><i class="fas fa-play"></i> Demo</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- SERVICES -->
+<section class="max-w-6xl mx-auto px-6 reveal">
+  <h2 class="text-2xl mb-6">Services</h2>
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="card p-6 border rounded-xl">Web Dev</div>
+    <div class="card p-6 border rounded-xl">UI Design</div>
+    <div class="card p-6 border rounded-xl">Content</div>
+  </div>
+</section>
 
-        <section id="experience">
-            <div class="container">
-                <h2># Kinh nghiệm</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <span class="date">05.2020 - 2022</span>
-                        <h3>Hãng Công nghệ XYZ</h3>
-                        <p>AI Developer</p>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="date">02.2019 - 05.2020</span>
-                        <h3>Hãng Công nghệ ABC</h3>
-                        <p>Data Scientist</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- ABOUT -->
+<section class="flex flex-col items-center py-20 reveal">
+  <img src="https://i.pravatar.cc/200" class="rounded-full border-4 border-green-400 mb-6">
+  <p class="max-w-md text-center opacity-70">
+    Tôi làm UI đẹp và mượt
+  </p>
+</section>
 
-        <section id="education">
-            <div class="container">
-                <h2># Học vấn & Chứng chỉ</h2>
-                <div class="education-info">
-                    <h3>Trường Đại học Quốc gia</h3>
-                    <p>Bằng Cử nhân Công nghệ Thông tin, Chuyên ngành AI</p>
-                    <h3>Google Cloud</h3>
-                    <p>Google Professional Machine Learning Engineer Certificate</p>
-                </div>
-            </div>
-        </section>
+<!-- CONTACT -->
+<section class="max-w-4xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-6 reveal">
+  <div>
+    <h2 class="text-xl">Contact</h2>
+    <p>Email: test@gmail.com</p>
+  </div>
+  <div>
+    <input class="w-full p-2 mb-3 bg-transparent border" placeholder="Name">
+    <input class="w-full p-2 mb-3 bg-transparent border" placeholder="Email">
+    <textarea class="w-full p-2 mb-3 bg-transparent border" placeholder="Message"></textarea>
+    <button class="bg-green-400 text-black px-4 py-2 rounded">Send</button>
+  </div>
+</section>
 
-        <section id="contact">
-            <div class="container">
-                <h2># Liên hệ</h2>
-                <div class="contact-container">
-                    <div class="contact-form">
-                        <input type="text" placeholder="Tên">
-                        <input type="email" placeholder="Email">
-                        <textarea placeholder="Nội dung" rows="5"></textarea>
-                        <button class="btn btn-primary">Gửi</button>
-                    </div>
-                    <div class="contact-info">
-                        <p><i class="fas fa-envelope"></i> mail.alexnguyen.me</p>
-                        <p><i class="fas fa-phone"></i> 090 123 4567</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                            <a href="#"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-logo">
-                <span class="first-name">Alex</span> <span class="last-name">Nguyen</span>
-            </div>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-            </div>
-            <p>&copy; 2023 Alex Nguyen. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
